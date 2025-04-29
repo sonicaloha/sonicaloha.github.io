@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SonicAloha</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDF010G6PN"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDF010G6PN');
+  </script>
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/zcswdt">
+            DRaMa
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+</body>
+</html>
+
+
+
+<style>
+  .author-block {
+    display: flex;
+    align-items: center; /* 让内容垂直居中 */
+  }
+
+  .author-block sup {
+    font-size: 0.8em; /* 缩小 * 号 */
+    margin-left: 2px; /* 添加一点左侧间距 */
+    vertical-align: top; /* 让 * 号靠顶部对齐 */
+  }
+</style>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title">
+          SonicAloha: <span style="display: block;">Learning Bimanual Manipulation with Audio Sensing</span>
+      </h1>
+        <div class="is-size-5 publication-authors" style="display: flex; justify-content: center; gap: 30px;">
+          <!-- <div class="author-block">
+            <a href="https://github.com/guningquan">Ningquan Gu</a>
+          </div>
+          <div class="author-block">
+            <a href="https://www.eee.hku.hk/people/kazuhiro-kosuge/"> Kazuhiro Kosuge</a>   
+        </div>
+          <div class="author-block">
+            <a href="https://neuro.mech.tohoku.ac.jp/">Mitsuhiro Hayashibe</a><sup>*</sup>
+          </div> -->
+
+          <div class="author-block">
+            <span>******** **</span>
+          </div>
+          <div class="author-block">
+            <span>******** ******</span>
+          </div>
+          <div class="author-block">
+            <span>********* *********</span><sup>*</sup>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<div class="column has-text-centered">
+  <div class="publication-links">
+    <!-- arXiv Link -->
+    <!-- <span class="link-block">
+      <a href="https://github.com/guningquan"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+          <i class="ai ai-arxiv"></i>
+        </span>
+        <span>arXiv (coming Soon)</span>
+      </a>
+    </span> -->
+    
+    <span class="link-block">
+      <a href=""
+         class="external-link button is-normal is-rounded is-dark" target="_blank">
+        <span class="icon">
+            <i class="fas fa-file-pdf"></i>
+        </span>
+        <span>Paper (coming Soon)</span>
+      </a>
+    </span>
+
+
+    <!-- Hardware Code Link -->
+    <!-- <span class="link-block">
+      <a href="https://github.com/guningquan/TactileAloha_Hardware"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+          <i class="fab fa-github"></i>
+        </span>
+        <span>Hardware Code</span>
+      </a>
+    </span> -->
+
+    <!-- ML Code Link -->
+    <span class="link-block">
+      <a href="https://github.com/sonicaloha/sonicaloha_ml"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+          <i class="fab fa-github"></i>
+        </span>
+        <span>Code</span>
+      </a>
+    </span>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Sound plays a vital role in human daily life, particularly in scenarios where visual information is limited.
+		However, incorporating sound into robotic manipulation remains challenges.
+		To address this, we propose SonicAloha, a system that integrates airborne audio sensing into the Aloha platform to enable multimodal manipulation through End2End imitation learning.
+		We collect synchronized audio segment, vision, and joint data at each timestep, and train by concatenated audio segments with corresponding visual and joint inputs.
+		To encode the audio information, we introduce the Audio Encode Module, which downsamples audio waveform and transfer them into long mel-spectrogram, and encode them via VGGish network with a pre-train weights to extract the audio feature.
+		To fuse encoded audio and vision features, we propose the Bidirectional Cross-Attention Module, which combines two parallel cross-attention branches that enable dynamic mutual attention between modalities, and feeds the fused features into the ACT policy to generate predicted actions.
+		Experimentally, we introduce three audio-conditioned bimanual tasks: alarm shutting, box locking, and stapler checking. 
+		Results show that our method significantly outperforms vision-only baselines. 
+		Moreover, we demonstrate robustness to closed-loop control, audio-visual noise, and zero-shot scenarios.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<hr/>
+
+<!-- <section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #56CCF2, #2F80ED); padding: 20px 0;">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3" style="color: #FFFFFF; text-align: left; margin: 0;">Autonomous Skills with Tactile Information</h2>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #56CCF2, #2F80ED); padding: 20px 0;">
+    <div class="container is-max-desktop" style="text-align: center;">
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Autonomous Bimanual Skills with Audio Information</h2>
+      <p style="color: #FFFFFF; margin-top: 10px; font-size: 1.1em;">🔊 Please turn on your speaker for full experience</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+	  <div style="height: 20px;"></div> <!-- 间隔 -->
+	  <h3 class="subtitle is-4" style="font-weight: bold;" >1. Alarm Shutting</h3> <!-- 新添加的子标题 -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+          <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+            <source src="./static/videos/alarm/alarm_shutting.mp4" type="video/mp4">
+          </video>
+          <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method (Audio + Vision)</h3>
+          <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+        </div>
+
+
+          <div style="width: 100%; margin-bottom: 20px;">
+          <h3 class="subtitle is-4" style="font-weight: bold;" >2. Box Locking</h3> <!-- 新添加的子标题 -->
+          <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                <source src="./static/videos/boxlock/box_lock_4s.mp4" type="video/mp4">
+              </video>
+              <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method (Audio + Vision)</h3>
+              <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+            </div>
+
+
+
+
+            
+            
+          <div style="width: 100%; margin-bottom: 20px;">
+            <h3 class="subtitle is-4" style="font-weight: bold;" >3. Stapler Checking</h3> <!-- 新添加的子标题 -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                  <source src="./static/videos/stapler/with_stapler.mp4" type="video/mp4">
+                </video>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method (Audio + Vision) With Staple</h3>
+                <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+              </div>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                  <!-- <video autoplay controls muted loop playsinline style="width: 100vw; max-width: 100%;"> -->
+                  <source src="./static/videos/stapler/no_stapler.mp4" type="video/mp4">
+                </video>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">
+                  Our Method (Audio + Vision) No Staple</h3>
+                <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+              </div>
+
+  </div>
+</section>
+
+<hr/>
+
+
+
+<section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #a18cd1,#a18cd1); padding: 20px 0;">
+    <div class="container is-max-desktop" style="text-align: center;">
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Robustness</h2>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+	  <div style="height: 20px;"></div> <!-- 间隔 -->
+	  <h3 class="subtitle is-4" style="font-weight: bold;" >Closed-loop Human Interaction</h3> <!-- 新添加的子标题 -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+          <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+            <source src="./static/videos/alarm/Tworandom.mp4" type="video/mp4">
+          </video>
+          <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method (Audio + Vision)</h3>
+          <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+        </div>
+
+          <div style="width: 100%; margin-bottom: 20px;">
+          <h3 class="subtitle is-4" style="font-weight: bold;" >Audio-visual Noise</h3> <!-- 新添加的子标题 -->
+          <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+              <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                <source src="./static/videos/alarm/keyboard.mp4" type="video/mp4">
+              </video>
+              <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method (Audio + Vision)</h3>
+              <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+            </div>
+
+          <div style="width: 100%; margin-bottom: 20px;">
+            <h3 class="subtitle is-4" style="font-weight: bold;" >Zero-shot</h3> <!-- 新添加的子标题 -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                  <source src="./static/videos/stapler/with_stapler_lowsound_new.mp4" type="video/mp4">
+                </video>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method (Audio + Vision) With New Staple</h3>
+                <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+              </div>
+
+
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #FF9A9E, #FAD0C4); padding: 20px 0;">
+    <div class="container is-max-desktop" style="text-align: center;">
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Representative Failure Cases</h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+	  <div style="height: 20px;"></div> <!-- 间隔 -->
+
+              <!-- <div>
+                <center><span style="font-size:20px" class="line-break">Slide Ziploc</span></center>
+                <video width="800" muted loop controls>
+                  <source src="./static/videos/velcro/velcro_tactile_01.mp4" type="video/mp4">
+                </video>
+              </div> -->
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                  <source src="./static/videos/boxlock/box_lock_2s.mp4" type="video/mp4">
+                </video>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method with 2s Audio Length for Box Locking <span style="display: block;"></span> (Robot arm re-presses the already locked box)</h3>
+                <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+              </div>
+
+
+              <div style="width: 100%; margin-bottom: 20px;">
+
+              
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                  <source src="./static/videos/stapler/stapler_4cams_act.mp4" type="video/mp4">
+                </video>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">ACT with only-Vision for Stapler Checking <span style="display: block;"></span> (The policy failed to learn either of the two branches and fell into the same failure pattern.)</h3>
+                <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+              </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<hr/>
+
+<section class="footer">
+  <div class="container content is-max-desktop" style="padding: 20px;">
+    <div style="text-align: left;">
+      If you have any questions, please feel free to contact us.
+      <!-- <a href="gu.ningquan.t1@dc.tohoku.ac.jp">gu.ningquan.t1@dc.tohoku.ac.jp</a>. -->
+    </div>
+  </div>
+</section>
+
+
+
+
+<script type="text/javascript" src="./static/slick/slick.min.js"></script>
+</body>
+</html>
