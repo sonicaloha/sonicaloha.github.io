@@ -87,17 +87,17 @@
           SonicAloha: <span style="display: block;">Learning Bimanual Manipulation with Audio Sensing</span>
       </h1>
         <div class="is-size-5 publication-authors" style="display: flex; justify-content: center; gap: 30px;">
-          <!-- <div class="author-block">
-            <a href="https://github.com/guningquan">Ningquan Gu</a>
+          <div class="author-block">
+            <a href="">Ningquan Gu</a>
           </div>
           <div class="author-block">
             <a href="https://www.eee.hku.hk/people/kazuhiro-kosuge/"> Kazuhiro Kosuge</a>   
         </div>
           <div class="author-block">
             <a href="https://neuro.mech.tohoku.ac.jp/">Mitsuhiro Hayashibe</a><sup>*</sup>
-          </div> -->
+          </div>
 
-          <div class="author-block">
+          <!-- <div class="author-block">
             <span>******** **</span>
           </div>
           <div class="author-block">
@@ -105,7 +105,7 @@
           </div>
           <div class="author-block">
             <span>********* *********</span><sup>*</sup>
-          </div>
+          </div> -->
           
 
         </div>
@@ -187,15 +187,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Sound plays a vital role in human daily life, particularly in scenarios where visual information is limited.
-		However, incorporating sound into robotic manipulation remains challenges.
+            Sound plays a vital role in daily life, especially when visual information is limited.
+		However, incorporating sound into robotic manipulation remains challenging.
 		To address this, we propose SonicAloha, a system that integrates airborne audio sensing into the Aloha platform to enable multimodal manipulation through End2End imitation learning.
-		We collect synchronized audio segment, vision, and joint data at each timestep, and train by concatenated audio segments with corresponding visual and joint inputs.
-		To encode the audio information, we introduce the Audio Encode Module, which downsamples audio waveform and transfer them into long mel-spectrogram, and encode them via VGGish network with a pre-train weights to extract the audio feature.
-		To fuse encoded audio and vision features, we propose the Bidirectional Cross-Attention Module, which combines two parallel cross-attention branches that enable dynamic mutual attention between modalities, and feeds the fused features into the ACT policy to generate predicted actions.
-		Experimentally, we introduce three audio-conditioned bimanual tasks: alarm shutting, box locking, and stapler checking. 
-		Results show that our method significantly outperforms vision-only baselines. 
-		Moreover, we demonstrate robustness to closed-loop control, audio-visual noise, and zero-shot scenarios.
+		We collect synchronized audio segment, vision, and joint data at each timestep. 
+		Concatenated audio segments are paired with the corresponding visual and joint inputs for training.
+		To encode the audio information, we introduce the Audio Encoding Module, which downsamples audio waveforms, converts them into long mel-spectrograms, and encodes them using a fine-tuned CNN14 network to extract audio features.
+		To fuse encoded audio and vision features, we propose the Transformer-based Bidirectional Cross-Attention Module, which combines two parallel cross-attention branches that enable dynamic mutual attention between modalities, and feeds the fused features into the Action Chunking with Transformers policy to generate predicted actions.
+		Experimentally, we introduce three long-horizon, audio-visual bimanual tasks: alarm shutting, box locking, and stapler checking. 
+		Compared to vision-only baseline and existing audio-visual method, ours achieves superior performance. 
+		Moreover, it demonstrates robustness to closed-loop control, audio-visual noise, and zero-shot generalization.
           </p>
         </div>
       </div>
@@ -391,7 +392,7 @@
   <div class="container content is-max-desktop" style="padding: 20px;">
     <div style="text-align: left;">
       If you have any questions, please feel free to contact us.
-      <!-- <a href="gu.ningquan.t1@dc.tohoku.ac.jp">gu.ningquan.t1@dc.tohoku.ac.jp</a>. -->
+      <a href="gu.ningquan.t1@dc.tohoku.ac.jp">gu.ningquan.t1@dc.tohoku.ac.jp</a>.
     </div>
   </div>
 </section>
