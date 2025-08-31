@@ -187,16 +187,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Sound plays a vital role in daily life, especially when visual information is limited.
-		However, incorporating sound into robotic manipulation remains challenging.
-		To address this, we propose SonicAloha, a system that integrates airborne audio sensing into the Aloha platform to enable multimodal manipulation through End2End imitation learning.
-		We collect synchronized audio segment, vision, and joint data at each timestep. 
-		Concatenated audio segments are paired with the corresponding visual and joint inputs for training.
-		To encode the audio information, we introduce the Audio Encoding Module, which downsamples audio waveforms, converts them into long mel-spectrograms, and encodes them using a fine-tuned CNN14 network to extract audio features.
-		To fuse encoded audio and vision features, we propose the Transformer-based Bidirectional Cross-Attention Module, which combines two parallel cross-attention branches that enable dynamic mutual attention between modalities, and feeds the fused features into the Action Chunking with Transformers policy to generate predicted actions.
-		Experimentally, we introduce three long-horizon, audio-visual bimanual tasks: alarm shutting, box locking, and stapler checking. 
-		Compared to vision-only baseline and existing audio-visual method, ours achieves superior performance. 
-		Moreover, it demonstrates robustness to closed-loop control, audio-visual noise, and zero-shot generalization.
+           Sound plays a vital role in daily life, especially when visual information is limited.
+	However, incorporating sound into robotic manipulation remains challenging.
+	To address this, we propose SonicAloha, a system that integrates airborne audio sensing into the Aloha platform to enable multimodal manipulation through End2End imitation learning.
+	We collect synchronized audio segment, vision, and joint data at each timestep. 
+	Concatenated audio segments are paired with the corresponding visual and joint inputs for training.
+	To encode the airborne audio information, we introduce an Audio Encoding Module using a pretrained Audio Spectrogram Transformer (AST) fine-tuned with Weight-Decomposed Low-Rank Adaptation (DoRA).
+	To fuse encoded audio and vision features, we propose the Transformer-based Bidirectional Cross-Attention Module, which combines two parallel cross-attention branches that enable dynamic mutual attention between modalities, and feeds the fused features into the Action Chunking with Transformers (ACT) policy to generate predicted actions.
+	Experimentally, we introduce three long-horizon, audio-visual bimanual tasks: alarm shutting, box locking, and stapler checking. 
+	Our method, which fuses vision with airborne audio, outperforms vision-only and existing audio-visual baselines, and shows advantages over contact-audio methods.
+	Moreover, it demonstrates robustness to closed-loop control, audio-visual noise, and zero-shot generalization.
           </p>
         </div>
       </div>
@@ -215,6 +215,30 @@
     </div>
   </div>
 </section> -->
+<section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #A8E6CF, #56C596); padding: 20px 0;">
+    <div class="container is-max-desktop" style="text-align: center;">
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0; font-weight: bold;">Approach Overview</h2>
+    </div>
+  </div>
+  <div class="container is-max-desktop" style="text-align: left; margin-top: 20px;">
+    <img src="./static/images/overview.jpg" alt="Approach Overview" 
+         style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; font-size: 0.95em; color: #444; text-align: left;">
+      Fig. 1. Approach Overview: We sample observations from the collected dataset. Each observation at time t includes top-view, left-arm, and right-arm camera visual images, audio recorded over the past L seconds before t, and the robot's joint states at time t.
+      For the visual input, the three camera observations are encoded by three separate CNNs, each producing feature representations shown as stacked blue feature maps, which are then tokenized into vision tokens, depicted as hollow blue squares.
+      For the L-second audio waveform, we first downsample it from 48kHz to 16kHz, and then convert it into Mel spectrograms. 
+      The mel spectrograms are encoded with an AST model initialized from AudioSet pre-trained weights. During training, the AST backbone is frozen, and only the DoRA modules are fine-tuned on our task-specific data, producing audio feature tokens shown as hollow orange squares.
+      The extracted visual and audio features are fed into a Transformer-based bidirectional cross-attention mechanism, which enables both modalities to adaptively attend to each other's informative regions. 
+      The resulting fused features are represented as blue and orange solid squares.
+      These encoded and cross-attention-enhanced features are then combined with the current robot joint values and are input into the ACT architecture's policy.
+      The ACT policy outputs the predicted next m timesteps of robot joint actions and computes the reconstruction loss between the predicted actions and the ground-truth joint values.
+    </p>
+  </div>
+</section>
+
+
+<div style="margin-bottom: 40px;"></div>
 
 <section class="hero teaser">
   <div class="hero-body" style="background: linear-gradient(135deg, #56CCF2, #2F80ED); padding: 20px 0;">
@@ -364,6 +388,16 @@
 
               <div style="width: 100%; margin-bottom: 20px;">
 
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                  <source src="./static/videos/alarm/contact_audio.mp4" type="video/mp4">
+                </video>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Contact Audio Method <span style="display: block;"></span> (When the alarm rings, the contact microphone cannot capture the object's emitted sound, and the robot fails to respond.)</h3>
+                <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+              </div>
+          </div>
+
               
             <div style="display: flex; flex-wrap: wrap; justify-content: center;">
               <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
@@ -373,7 +407,7 @@
                 <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">ACT with only-Vision for Stapler Checking <span style="display: block;"></span> (The policy failed to learn either of the two branches and fell into the same failure pattern.)</h3>
                 <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
               </div>
-    </div>
+          </div>
   </div>
 </section>
 
