@@ -189,7 +189,7 @@
          style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
     <p style="margin-top: 10px; font-size: 0.95em; color: #444; text-align: left;">
       Fig. 1. Approach Overview: We sample observations from the collected dataset. Each observation at time t includes top-view, left-arm, and right-arm camera visual images, audio recorded over the past L seconds before t, and the robot's joint states at time t.
-      For the visual input, the three camera observations are encoded by three separate CNNs, each producing feature representations shown as stacked blue feature maps, which are then tokenized into vision tokens, depicted as hollow blue squares.
+      For the visual input, the three camera observations are encoded by three separate ResNet, each producing feature representations shown as stacked blue feature maps, which are then tokenized into vision tokens, depicted as hollow blue squares.
       For the L-second audio waveform, we first downsample it from 48kHz to 16kHz, and then convert it into Mel spectrograms. 
       The mel spectrograms are encoded with an AST model initialized from AudioSet pre-trained weights. During training, the AST backbone is frozen, and only the DoRA modules are fine-tuned on our task-specific data, producing audio feature tokens shown as hollow orange squares.
       The extracted visual and audio features are fed into a Transformer-based bidirectional cross-attention mechanism, which enables both modalities to adaptively attend to each other's informative regions. 
